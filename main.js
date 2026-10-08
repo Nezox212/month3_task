@@ -4,7 +4,7 @@
 
 const buttonElement = document.querySelector('.theme');
 
-let theme = localStorage.getItem('theme');
+let theme = localStorage.getItem('theme') || 'light';
 
 if (theme === 'dark') {
     document.body.style.backgroundColor = "black";
