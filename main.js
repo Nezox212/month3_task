@@ -1,39 +1,51 @@
-//Сверстай просто сайт и сделай переключатель темы:
-// кнопка меняет фон страницы на тёмный/светлый, а выбранная тема сохраняется
-// в localStorage. При следующем открытии страницы тема должна восстанавливаться из localStorage.
+//рег выражения
 
-const buttonElement = document.querySelector('.theme');
+// const test = '123 John 45 jacob 6 '
+// const regex = /\d/gi;
+//
+// //match
+//
+// console.log(test.match(regex))
 
-let theme = localStorage.getItem('theme') || 'light';
+//+ - 1>
+//* - 0>
+//? - 0 | 1
 
-if (theme === 'dark') {
-    document.body.style.backgroundColor = "black";
-    document.body.style.color = "white";
-    buttonElement.textContent = 'turn light mode';
+
+
+//g
+//i
+//m
+//s
+
+
+// \d - 0-9 | D - !0-9
+// \w - words,digits, _ | W !
+// \s - space | S - !space
+
+
+//  CALLBACK FUNCTION
+
+// const func1 = (func) => {
+//     func()
+// }
+//
+// const func2 = () => {
+//     console.log("its func2")
+// }
+//
+// func1(func2)
+
+
+//рекурсия
+
+let num = 0;
+const test = () => {
+    num++
+    console.log(num)
+    if(num < 500){
+        requestAnimationFrame(test)
 }
-else if (theme === 'light') {
-    document.body.style.backgroundColor = "white";
-    document.body.style.color = "black";
-    buttonElement.textContent = 'turn dark mode';
+
 }
-
-buttonElement.addEventListener('click', () => {
-    if (theme === 'light') {
-        theme = 'dark';
-
-        document.body.style.backgroundColor = "black";
-        document.body.style.color = "white";
-        buttonElement.textContent = 'turn light mode';
-
-        localStorage.setItem('theme', theme);
-    }
-    else if (theme === 'dark') {
-        theme = 'light';
-
-        document.body.style.backgroundColor = "white";
-        document.body.style.color = "black";
-        buttonElement.textContent = 'turn dark mode';
-
-        localStorage.setItem('theme', theme);
-    }
-});
+test()
